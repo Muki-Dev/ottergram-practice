@@ -11,4 +11,27 @@ function setDetails(imageUrl,titleText){
 	detailTitle.textContent = titleText;
 }
 
+function imageFromThumb(thumbnail){
+	'use strict';
+	return thumbnail.getAttribute('data-image-url')
+}
+
+function titleFromThumb(thumbnail){
+	'use strict';
+	return thumbnail.getAttribute('data-image-title');
+}
+
+function setDetailsFromThumb(thumbnail){
+	'use strict';
+	setDetails(imageFromThumb(thumbnail),titleFromThumb(thumbnail));
+}
+
+function addThumbClickHandler(thumb){
+	'use strict';
+	thumb.addEventListener('click',function(eevnt){
+		event.preventDefault();
+		setDetailsFromThumb(thumb);
+	})
+}
+
 setDetails('img/otter1.jpg',"Stayin'Alive");
