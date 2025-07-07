@@ -34,11 +34,17 @@ function addThumbClickHandler(thumb){
 	})
 }
 
-function getThumbnailArrays(){
+function getThumbnailArray(){
 	'use strict';
 	var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
 	var thumbnailArray = [].slice.call(thumbnails);
 	return thumbnailArray;
 }
 
-setDetails('img/otter1.jpg',"Stayin'Alive");
+function initializeEvents(){
+	'use strict';
+	var thumbnails = getThumbnailArray();
+	thumbnails.forEach(addThumbClickHandler)
+}
+
+initializeEvents();
