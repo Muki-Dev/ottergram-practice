@@ -2,13 +2,13 @@ var DETAIL_IMAGE_SELECTOR = '[data-image-role="target"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
 var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
 
-function setDetails(){
+function setDetails(imageUrl,titleText){
 	'use strict';
 	var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR);
-	detailImage.setAttribute('src','img/otter4.jpg');
+	detailImage.setAttribute('src',imageUrl);
 
 	var detailTitle = document.querySelector(DETAIL_TITLE_SELECTOR);
-	detailTitle.textContent = 'Night Fever';
+	detailTitle.textContent = titleText;
 }
 
-setDetails();
+setDetails('img/otter1.jpg',"Stayin'Alive");
