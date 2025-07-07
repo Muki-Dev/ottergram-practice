@@ -44,13 +44,22 @@ function getThumbnailArray(){
 
 function hideDetails(){
 	'use strict';
-	document.body.addClassList(HIDDEN_DETAIL_CLASS).
+	document.body.addClassList(HIDDEN_DETAIL_CLASS);
+}
+
+function addKeyPressHandler(){
+	'use strict';
+	document.body.addEventListener('keyup',function(event){
+		event.preventDefault();
+		console.log(event.keyCode)
+	})
 }
 
 function initializeEvents(){
 	'use strict';
 	var thumbnails = getThumbnailArray();
-	thumbnails.forEach(addThumbClickHandler)
+	thumbnails.forEach(addThumbClickHandler);
+	addKeyPressHandler();
 }
 
 initializeEvents();
