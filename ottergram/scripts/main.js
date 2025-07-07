@@ -30,8 +30,15 @@ function addThumbClickHandler(thumb){
 	'use strict';
 	thumb.addEventListener('click',function(eevnt){
 		event.preventDefault();
-		setDetailsFromThumb(thumb);
+		setDetailsFromThumb(thumb); 
 	})
+}
+
+function getThumbnailArrays(){
+	'use strict';
+	var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
+	var thumbnailArray = [].slice.call(thumbnails);
+	return thumbnailArray;
 }
 
 setDetails('img/otter1.jpg',"Stayin'Alive");
